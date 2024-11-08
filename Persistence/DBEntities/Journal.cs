@@ -10,14 +10,16 @@ namespace Persistence.DBEntities
 {
     internal class Journal
     {
-        private string Journal_Name { get; set; } 
-        public List<string> Subgect { get; set; }
-        //public List<User> Students { get; set; } = new List<User>();
-        public object Date = new DateTime();
-        public Dictionary<Dictionary<List<User>, short>, DateTime > Marks { get; set; }
+        // Было решено сделать универсальную сущность журнала, и в контексте сделать под каждый тип журнала отдельный(через Ignore c FluentAPI)
+
+        private string Journal_Name { get; set; }
+        public bool Type_Of_Journak { get; set; } // true - для студента false для препода
+        public List<string> Subgect { get; set; } // список предметов журнала для студента
+        public object Date = new DateTime(); // дата оценки
+        public Dictionary<Dictionary<List<User>, short>, DateTime > Marks { get; set; } // сама оценка которая вяэется к журналу и дате
         public Dictionary<User, string> comment { get; set; }
     }
 
 
 }
-}
+

@@ -8,7 +8,6 @@
 
     <ItemGroup>
       <Folder Include="DBContext\" />
-      <Folder Include="DBEntities\" />
       <Folder Include="PersistenceRepo\" />
     </ItemGroup>
 
